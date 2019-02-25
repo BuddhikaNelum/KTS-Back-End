@@ -31,6 +31,9 @@ public class Container {
         this.containerSize = containerSize;
     }
 
+    public Container() {
+    }
+
     @Override
     public String toString() {
         return "Container{" +

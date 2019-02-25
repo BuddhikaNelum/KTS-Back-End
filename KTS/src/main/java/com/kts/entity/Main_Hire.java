@@ -20,6 +20,9 @@ public class Main_Hire {
     @JoinColumn(name = "jobRoleId")
     private Job_Role job_role;
 
+    public Main_Hire() {
+    }
+
     @Override
     public String toString() {
         return "Main_Hire{" +

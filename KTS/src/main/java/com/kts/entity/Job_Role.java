@@ -25,6 +25,9 @@ public class Job_Role {
         this.title = title;
     }
 
+    public Job_Role() {
+    }
+
     @Override
     public String toString() {
         return "Job_Role{" +

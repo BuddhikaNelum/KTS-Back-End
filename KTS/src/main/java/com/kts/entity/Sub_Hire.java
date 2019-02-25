@@ -51,6 +51,9 @@ public class Sub_Hire {
         this.job_role = job_role;
     }
 
+    public Sub_Hire() {
+    }
+
     @Override
     public String toString() {
         return "Sub_Hire{" +
