@@ -2,12 +2,17 @@ package com.kts.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Container {
 
     @Id
     private String containerId;
+
+    @OneToMany
+    @JoinColumn(name = "containerSizeId")
     private int containerSize;
 
     public String getContainerId() {
