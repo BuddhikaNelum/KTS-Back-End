@@ -1,14 +1,19 @@
 package com.kts.entity;
 
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Container {
 
     @Id
     private String containerId;
-    private int containerSize;
+    @ManyToOne
+    private Container_Size containerSize;
 
     public String getContainerId() {
         return containerId;
@@ -18,11 +23,11 @@ public class Container {
         this.containerId = containerId;
     }
 
-    public int getContainerSize() {
+    public Container_Size getContainerSize() {
         return containerSize;
     }
 
-    public void setContainerSize(int containerSize) {
+    public void setContainerSize(Container_Size containerSize) {
         this.containerSize = containerSize;
     }
 
