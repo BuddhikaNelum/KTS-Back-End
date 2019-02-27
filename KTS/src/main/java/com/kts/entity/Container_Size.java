@@ -26,6 +26,9 @@ public class Container_Size {
         this.containerSize = containerSize;
     }
 
+    public Container_Size() {
+    }
+
     @Override
     public String toString() {
         return "Container_Size{" +
