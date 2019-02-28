@@ -1,9 +1,6 @@
 package com.kts.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 public class Person {
@@ -12,8 +9,8 @@ public class Person {
     private int personId;
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "jobRoleId")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @Column(name = "jobRoleId")
     private Job_Role job_role;
 
     public int getPersonId() {

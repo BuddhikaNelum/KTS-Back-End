@@ -1,21 +1,27 @@
 package com.kts.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.util.Date;
 
-@Entity
 public class Hire {
 
     @Id
     private int hireId;
+
     @ManyToOne
-    private
-    Container containerId;
-    @ManyToOne
-    private Driver driverId;
+    @Column(name = "containerId")
+    private Container container;
+
     private Date date;
+
+    @ManyToOne
+    @Column(name = "driverId")
+    private Person driver;
+
+    @ManyToOne
+    @Column(name = "mateId")
+    private Person mate;
+
 
     public int getHireId() {
         return hireId;
@@ -23,6 +29,14 @@ public class Hire {
 
     public void setHireId(int hireId) {
         this.hireId = hireId;
+    }
+
+    public Container getContainer() {
+        return container;
+    }
+
+    public void setContainer(Container container) {
+        this.container = container;
     }
 
     public Date getDate() {
@@ -33,20 +47,19 @@ public class Hire {
         this.date = date;
     }
 
-    public Driver getDriverId() {
-        return driverId;
+    public Person getDriver() {
+        return driver;
     }
 
-    public void setDriverId(Driver driverId) {
-        this.driverId = driverId;
+    public void setDriver(Person driver) {
+        this.driver = driver;
     }
 
-
-    public Container getContainerId() {
-        return containerId;
+    public Person getMate() {
+        return mate;
     }
 
-    public void setContainerId(Container containerId) {
-        this.containerId = containerId;
+    public void setMate(Person mate) {
+        this.mate = mate;
     }
 }

@@ -2,30 +2,17 @@ package com.kts.entity;
 
 import org.hibernate.annotations.Cascade;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-<<<<<<< HEAD
-import javax.persistence.ManyToOne;
-=======
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
->>>>>>> b792e4b8aed415b55e47da47419ffdde28d128c9
+import javax.persistence.*;
 
 @Entity
 public class Container {
 
     @Id
     private String containerId;
-<<<<<<< HEAD
-    @ManyToOne
-    private Container_Size containerSize;
-=======
 
-    @OneToMany
-    @JoinColumn(name = "containerSizeId")
-    private int containerSize;
->>>>>>> b792e4b8aed415b55e47da47419ffdde28d128c9
+    @ManyToOne
+    @Column(name = "containerSizeId")
+    private Container_Size containerSize;
 
     public String getContainerId() {
         return containerId;
