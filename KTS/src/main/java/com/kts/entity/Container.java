@@ -11,7 +11,7 @@ public class Container {
     private String containerId;
 
     @ManyToOne
-    @Column(name = "containerSizeId")
+    @JoinColumn(name = "containerSizeId")
     private Container_Size containerSize;
 
     public String getContainerId() {
