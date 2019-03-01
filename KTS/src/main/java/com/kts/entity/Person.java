@@ -9,9 +9,19 @@ public class Person {
     private int personId;
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @Column(name = "jobRoleId")
+    @ManyToOne
+    @JoinColumn(name = "jobRoleId")
     private Job_Role job_role;
+
+
+    public Person() {
+    }
+
+    public Person(int personId, String name, Job_Role job_role) {
+        this.personId = personId;
+        this.name = name;
+        this.job_role = job_role;
+    }
 
     public int getPersonId() {
         return personId;
@@ -34,15 +44,6 @@ public class Person {
     }
 
     public void setJob_role(Job_Role job_role) {
-        this.job_role = job_role;
-    }
-
-    public Person() {
-    }
-
-    public Person(int personId, String name, Job_Role job_role) {
-        this.personId = personId;
-        this.name = name;
         this.job_role = job_role;
     }
 }

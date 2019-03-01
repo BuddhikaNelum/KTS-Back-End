@@ -3,24 +3,30 @@ package com.kts.entity;
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Hire {
 
     @Id
     private int hireId;
 
     @ManyToOne
-    @Column(name = "containerId")
-    private Container container;
+    @JoinColumn(name = "containerNo")
+    private Container containerNo;
 
+    @Temporal(TemporalType.DATE)
     private Date date;
 
     @ManyToOne
-    @Column(name = "driverId")
+    @JoinColumn(name = "driver")
     private Person driver;
 
     @ManyToOne
-    @Column(name = "mateId")
+    @JoinColumn(name = "mate")
     private Person mate;
+
+    @ManyToOne
+    @JoinColumn(name = "vechileNo")
+    private Vehicle vehicle;
 
 
     public int getHireId() {
@@ -32,11 +38,11 @@ public class Hire {
     }
 
     public Container getContainer() {
-        return container;
+        return containerNo;
     }
 
-    public void setContainer(Container container) {
-        this.container = container;
+    public void setContainer(Container containerNo) {
+        this.containerNo = containerNo;
     }
 
     public Date getDate() {
@@ -61,5 +67,26 @@ public class Hire {
 
     public void setMate(Person mate) {
         this.mate = mate;
+    }
+
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    @Override
+    public String toString() {
+        return "Hire{" +
+                "hireId=" + hireId +
+                ", containerNo=" + containerNo +
+                ", date=" + date +
+                ", driver=" + driver +
+                ", mate=" + mate +
+                ", vehicle=" + vehicle +
+                '}';
     }
 }
